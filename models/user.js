@@ -19,6 +19,7 @@ const UserSchema = new Schema({
   },
 });
 
+//check all the models if a user exists that would be equals to the user, or create a model with the UserSchema.
 const User = models.User || model("User", UserSchema);
 
 export default User;
