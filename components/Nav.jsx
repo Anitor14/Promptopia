@@ -7,7 +7,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 const Nav = () => {
   const { data: session } = useSession();
 
-  console.log(`this is the ${session}`);
+  // console.log(`this is the ${session.user}`);
 
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
@@ -16,7 +16,7 @@ const Nav = () => {
     const setUpProviders = async () => {
       // getting all the providers.
       const response = await getProviders();
-
+      console.log(response);
       // storing it in the providers state.
       setProviders(response);
     };

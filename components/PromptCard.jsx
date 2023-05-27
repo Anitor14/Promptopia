@@ -5,4 +5,3 @@ const PromptCard = () => {
 };
 
 export default PromptCard;
-orange_gradient
