@@ -10,8 +10,8 @@ export const POST = async (req) => {
     await connectToDB();
     // creating a new prompt
     const newPrompt = new Prompt({ creator: userId, prompt, tag });
+    // saving the new prompt.
     await newPrompt.save();
-    console.log("we reach here.");
     return new Response(JSON.stringify(newPrompt), {
       status: 201,
     });

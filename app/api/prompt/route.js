@@ -1,11 +1,12 @@
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
+// this route gets all the prompts.
 export const GET = async (request) => {
   try {
-    console.log("we done enter here.");
     await connectToDB();
 
+    // getting all the prompts and the creators.
     const prompts = await Prompt.find({}).populate("creator");
 
     return new Response(JSON.stringify(prompts), {
